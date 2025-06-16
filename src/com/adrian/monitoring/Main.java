@@ -1,8 +1,8 @@
 package com.adrian.monitoring;
 
 import com.adrian.monitoring.model.*;
-import com.adrian.monitoring.service.SubscriptionManager;
 import com.adrian.monitoring.service.MonitoringService;
+import com.adrian.monitoring.service.SubscriptionManager;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class Main {
         SubscriptionManager mgr = new SubscriptionManager();
 // Adrian subscribes to example.com every 1 min via Console
         mgr.add(new Subscription(adrian,
-                "example.com",
+                "http://google.com",
                 new NotificationConfig(Frequency.MIN_1, NotificationChannel.CONSOLE)));
         new MonitoringService(mgr).startAll();
     }
